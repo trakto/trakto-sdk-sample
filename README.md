@@ -1,23 +1,22 @@
 # Exemplo de site utilizando o SDK do Trakto
 
 # Table of Contents
-1 [Introdução](#intro)
-1.1 [Sobre este repositório](#about_repo)
-1.2 [O que é o Trakto ?](#about_trakto)
-1.3 [O que é o Trakto SDK®?](#about_trakto_sdk)
-2. [Como este projeto pod ser útil para mim?](#useful)
-3. [Como utilizar ?](#howto)
-##1. Introdução
+1. [Introdução](#intro)
+2. [Sobre este repositório](#about_repo)
+3. [O que é o Trakto ?](#about_trakto)
+4. [O que é o Trakto SDK®?](#about_trakto_sdk)
+5. [Como este projeto pod ser útil para mim?](#useful)
+6. [Como utilizar ?](#howto)
 
-###1.1 Sobre este repositório
+#1. Sobre este repositório
 
 Este repositório é um exemplo de site com uso do **botão do Trakto, via Trakto® SDK,** para criação de banners, artes para redes sociais, ebooks, etc.
 
-###1.2 O que é o Trakto ?
+#2. O que é o Trakto ?
 
 Trakto é uma plataforma de criação de materiais de marketing, vendas e impressos. Com o trakto você consegue criar designs profissionais sem ter experiência com plataformas complexas, como por exemplo o Photoshop e Illustrator.
 
-###1.3 O que é o Trakto SDK ?
+#3. O que é o Trakto SDK ?
 
 Trakto SDK é um pacote de desenvolvimento utilizando todos os recursos para criação de materiais de marketing digital, impressos, vendas, etc.
 
@@ -26,11 +25,11 @@ O pacote de desenvolvimento inclui:
 1. **Trakto Button®:** uso do editor integrado a sua plataforma;
 2. **Trakto API®:** Criação e gestão de materiais criados com o Trakto via Restful API;
 
-##2. Como este projeto pode ser útil para mim ?
+#4. Como este projeto pode ser útil para mim ?
 
 Este projeto apresenta uma maneira simples com abordagem enxuta sobre como integrar o botão ao seu site e/ou plataforma.
 
-##3. Como utilizar
+#5. Como utilizar
 
 Este exemplo já disponibiliza informações e crednciais de uso que podem ser utilizadas como exemplo.
 
@@ -74,7 +73,7 @@ TraktoEditor.init({
         Your button title 
    </button>
 ```
-##4. Links úteis
+#6. Links úteis
 
 **Solicite as suas credenciais:** Envie um email para jorge@trakto.io
 
