@@ -5,7 +5,7 @@
 2. [Sobre este repositório](#about_repo)
 3. [O que é o Trakto ?](#about_trakto)
 4. [O que é o Trakto SDK®?](#about_trakto_sdk)
-5. [Como este projeto pod ser útil para mim?](#useful)
+5. [Como este projeto pode ser útil para mim?](#useful)
 6. [Como utilizar ?](#howto)
 
 #1. Sobre este repositório
@@ -29,7 +29,7 @@ O pacote de desenvolvimento inclui:
 
 Este projeto apresenta uma maneira simples com abordagem enxuta sobre como integrar o botão ao seu site e/ou plataforma.
 
-#5. Como utilizar
+#5. Como utilizar ?
 
 Este exemplo já disponibiliza informações e crednciais de uso que podem ser utilizadas como exemplo.
 
