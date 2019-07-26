@@ -1,4 +1,4 @@
-# Exemplo de site utilizando o SDK DO Trakto
+# Exemplo de site utilizando o SDK do Trakto
 
 ## Introdução
 
