@@ -21,7 +21,7 @@ Trakto is a platform for creating marketing materials, sales and print.
 
 With Trakto you can create professional designs without having experience with complex platforms, for example Photoshop and Illustrator.
 
-See more on: phttps://trakto.design](https://trakto.design)
+See more on: [https://trakto.design](https://trakto.design)
 
 <div id='about_trakto_sdk'/>
 
