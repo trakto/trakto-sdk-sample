@@ -7,18 +7,21 @@
 4. [Como este projeto pode ser útil para mim?](#useful)
 5. [Como utilizar ?](#howto)
 
-<a id='about_repo'/>
+
 # 1. Sobre este repositório
+<div id='about_repo'/>
 
 Este repositório é um exemplo de site com uso do **botão do Trakto, via Trakto® SDK,** para criação de banners, artes para redes sociais, ebooks, etc.
 
-<a id='about_trakto'/>
+
 # 2. O que é o Trakto ?
+<div id='about_trakto'/>
 
 Trakto é uma plataforma de criação de materiais de marketing, vendas e impressos. Com o trakto você consegue criar designs profissionais sem ter experiência com plataformas complexas, como por exemplo o Photoshop e Illustrator.
 
-<a id='about_trakto_sdk'/>
+
 # 3. O que é o Trakto SDK ?
+<div id='about_trakto_sdk'/>
 
 Trakto SDK é um pacote de desenvolvimento utilizando todos os recursos para criação de materiais de marketing digital, impressos, vendas, etc.
 
@@ -27,14 +30,14 @@ O pacote de desenvolvimento inclui:
 1. **Trakto Button®:** uso do editor integrado a sua plataforma;
 2. **Trakto API®:** Criação e gestão de materiais criados com o Trakto via Restful API;
 
-<a id='useful'/>
-# 4. Como este projeto pode ser útil para mim ?
 
+# 4. Como este projeto pode ser útil para mim ?
+<a id='useful'/>
 Este projeto apresenta uma maneira simples com abordagem enxuta sobre como integrar o botão ao seu site e/ou plataforma.
 
-<a id='howto'/>
-# 5. Como utilizar ?
 
+# 5. Como utilizar ?
+<div id='howto'/>
 Este exemplo já disponibiliza informações e crednciais de uso que podem ser utilizadas como exemplo.
 
 Caso queira customizar com suas credenciais:
@@ -77,9 +80,9 @@ TraktoEditor.init({
         Your button title 
    </button>
 ```
-<a id='links'/>
-# 6. Links úteis
 
+# 6. Links úteis
+<div id='links'/>
 **Solicite as suas credenciais:** Envie um email para jorge@trakto.io
 
 **Link do Trakto API® e Button®:** [Clique aqui para acessar](https://traktoapi.docs.apiary.io/)
