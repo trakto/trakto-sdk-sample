@@ -1,53 +1,54 @@
-# Exemplo de site utilizando o SDK do Trakto
-
 # Table of Contents
-1. [Sobre este repositório](#about_repo)
-2. [O que é o Trakto ?](#about_trakto)
-3. [O que é o Trakto SDK®?](#about_trakto_sdk)
-4. [Como este projeto pode ser útil para mim?](#useful)
-5. [Como utilizar ?](#howto)
+1. [About this repository](#about_repo)
+2. [What is Trakto ?](#about_trakto)
+3. [What is Trakto SDK®?](#about_trakto_sdk)
+4. [How can this project be useful to me?](#useful)
+5. [How to use ?](#howto)
 5. [Links](#links)
 
 <div id='about_repo'/>
 
-# 1. Sobre este repositório
+# 1. About this repository
 
-
-Este repositório é um exemplo de site com uso do **botão do Trakto, via Trakto® SDK,** para criação de banners, artes para redes sociais, ebooks, etc.
+This repository is an example of a site using the **Trakto Button®, via Trakto® SDK**, for creating banners, social posts, ebooks, etc.
 
 <div id='about_trakto'/>
 
-# 2. O que é o Trakto ?
+# 2. What is Trakto ?
 
 
-Trakto é uma plataforma de criação de materiais de marketing, vendas e impressos. Com o trakto você consegue criar designs profissionais sem ter experiência com plataformas complexas, como por exemplo o Photoshop e Illustrator.
+Trakto is a platform for creating marketing materials, sales and print. 
+
+With Trakto you can create professional designs without having experience with complex platforms, for example Photoshop and Illustrator.
+
+See more on: phttps://trakto.design](https://trakto.design)
 
 <div id='about_trakto_sdk'/>
 
-# 3. O que é o Trakto SDK ?
+# 3. What is Trakto SDK® ?
 
 
-Trakto SDK é um pacote de desenvolvimento utilizando todos os recursos para criação de materiais de marketing digital, impressos, vendas, etc.
+Trakto SDK® is a development package utilizing all the resources for creating digital marketing materials, print, sales, etc. It's way to integrate the our editor in your site.
 
-O pacote de desenvolvimento inclui:
+The development packages includes:
 
-1. **Trakto Button®:** uso do editor integrado a sua plataforma;
-2. **Trakto API®:** Criação e gestão de materiais criados com o Trakto via Restful API;
+1. **Trakto Button®:** Integrate the our editor in your site or plataform.
+2. **Trakto API®:** Creation and management of documents created with Trakto via Restful API.
 
 <div id='useful'/>
 
-# 4. Como este projeto pode ser útil para mim ?
+# 4. How can this project be useful to me ?
 
-Este projeto apresenta uma maneira simples com abordagem enxuta sobre como integrar o botão ao seu site e/ou plataforma.
+This project presents a simple way with lean approach on how to integrate the button to your website and/or platform.
 
 <div id='howto'/>
 
-# 5. Como utilizar ?
+# 5. How to use ?
 
-Este exemplo já disponibiliza informações e crednciais de uso que podem ser utilizadas como exemplo.
-Caso queira customizar com suas credenciais:
+The project of this repository already provides information and credncial usage that can be used as an example.
+If you want to customize with your credentials:
 
-1. Identifique seu `API Secret`, `Product Key` e `Email` do usuário que deseja utilizar
+1. Identify your `API Secret`, `Product Key` and `Email`
 
 ```
 <script src="https://sdk.trakto.io/trakto-editor.min.js"></script>
@@ -65,21 +66,21 @@ TraktoEditor.init({
 </script>
 ```
 
-2. Realiza a disponibilização do botão para inicializar o editor
+2. Make the button available to initialize the editor
 
-**Criar a partir de um formato de página:**
+**Create from empty page:**
 ```
    <button class="<Your Button Class Name>" data-formatid="<Your Format Id>"> 
         Your button title 
    </button>
 ```
-**Criar a partir de um template:**
+**Create from template:**
 ```
    <button class="<Your Button Class Name>" data-templateid="<Your Format Id>"> 
         Your button title 
    </button>
 ```
-**Continuar a edição de um documento criado anteriormente:**
+**Continue editing a previously created document:**
 ```
    <button class="<Your Button Class Name>" data-documentid="<Your Format Id>"> 
         Your button title 
@@ -88,10 +89,12 @@ TraktoEditor.init({
 
 <div id='links'/>
 
-# 6. Links úteis
+> [Access official documentation](https://traktoapi.docs.apiary.io) **if you want to know how to receive the template ID's and page formats.**
 
-**Solicite as suas credenciais:** Envie um email para jorge@trakto.io
+# 6. Links
 
-**Link do Trakto API® e Button®:** [Clique aqui para acessar](https://traktoapi.docs.apiary.io/)
+**Request your credentials:** Send a email to jorge@trakto.io
 
-**Veja outros exemplos de uso:** [Ver outros exemplos](https://trakto.design)
+**Official Docs - Trakto API® and Button®:** [Click here](https://traktoapi.docs.apiary.io)
+
+**See others avaliables examples:** [Click here](https://trakto.design)
