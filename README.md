@@ -38,7 +38,7 @@ Caso queira customizar com suas credenciais:
 1. Identifique seu `API Secret`, `Product Key` e `Email` do usuário que deseja utilizar
 
 ```
-<script src="https://trakto-sdk.web.app/trakto-editor.min.js"></script>
+<script src="https://sdk.trakto.io/trakto-editor.min.js"></script>
 <script>
 TraktoEditor.init({
           apiSecret: '<SUA API SECRET>',
