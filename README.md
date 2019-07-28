@@ -2,7 +2,7 @@
 1. [About this repository](#about_repo)
 2. [What is Trakto ?](#about_trakto)
 3. [What is Trakto SDK®?](#about_trakto_sdk)
-4. [How can this project be useful to me?](#useful)
+4. [How can this project be useful for you?](#useful)
 5. [How to use ?](#howto)
 5. [Links](#links)
 
@@ -37,7 +37,7 @@ The development packages includes:
 
 <div id='useful'/>
 
-# 4. How can this project be useful to me ?
+# 4. How can this project be useful for you ?
 
 This project presents a simple way with lean approach on how to integrate the button to your website and/or platform.
 
