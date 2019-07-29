@@ -1,4 +1,4 @@
-# Table of Contents
+# Summary
 1. [About this repository](#about_repo)
 2. [What is Trakto ?](#about_trakto)
 3. [What is Trakto SDK®?](#about_trakto_sdk)
