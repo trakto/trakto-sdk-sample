@@ -51,19 +51,23 @@ If you want to customize with your credentials:
 
 1. Identify your `API Secret`, `Product Key` and `Email`
 
-```
+```js
 <script src="https://sdk.trakto.io/trakto-editor.min.js"></script>
 <script>
-TraktoEditor.init({
-          apiSecret: '<SUA API SECRET>',
-          productKey: '<SEU PRODUCT KEY>',
-          userEmail: '<EMAIL DO USUARIO>',
-          buttonClassName: 'trakto-button',
-          defaultCallback: data => {},
-          listTemplatesCallback: data => {},
-          listFormatsCallback: data => {},
-          listDocumentsCallback: data => {}
-)};
+          window.onload = () => {
+                (function () {
+                    TraktoEditor.init({
+                              apiSecret: '<SUA API SECRET>',
+                              productKey: '<SEU PRODUCT KEY>',
+                              userEmail: '<EMAIL DO USUARIO>',
+                              buttonClassName: 'trakto-button',
+                              defaultCallback: data => {},
+                              listTemplatesCallback: data => {},
+                              listFormatsCallback: data => {},
+                              listDocumentsCallback: data => {}
+                    )};
+               })();
+          };
 </script>
 ```
 
