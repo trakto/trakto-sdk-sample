@@ -96,6 +96,8 @@ If you want to customize with your credentials:
 
 > [Access official documentation](https://traktoapi.docs.apiary.io) **if you want to know how to receive the template ID's and page formats.**
 
+<div id='localhost'/>
+
 # 6. Running on localhost
 
 When you're testing`localhost`, the Trakto Button® and Sdk® is avaliable only on ports:
