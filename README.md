@@ -4,7 +4,8 @@
 3. [What is Trakto SDK®?](#about_trakto_sdk)
 4. [How can this project be useful for you?](#useful)
 5. [How to use ?](#howto)
-5. [Links](#links)
+6. [Running on localhost](#localhost)
+7. [Links](#links)
 
 <div id='about_repo'/>
 
@@ -91,7 +92,20 @@ TraktoEditor.init({
 
 > [Access official documentation](https://traktoapi.docs.apiary.io) **if you want to know how to receive the template ID's and page formats.**
 
-# 6. Links
+# 6. Running on localhost
+
+When you're testing`localhost`, the Trakto Button® and Sdk® is avaliable only on ports:
+
+|Host                 |
+|---------------------|
+|http://localhost:3000|
+|http://localhost:4000|
+|http://localhost:4200|
+|http://localhost:5000|
+|http://localhost:8000|
+|http://localhost:8080|
+
+# 7. Links
 
 **Request your credentials:** Send a email to jorge@trakto.io
 
