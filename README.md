@@ -51,27 +51,63 @@ If you want to customize with your credentials:
 
 1. Identify your `API Secret`, `Product Key` and `Email`
 
-```js
-<script src="https://sdk.trakto.io/trakto-editor.min.js"></script>
-<script>
-          window.onload = () => {
-                (function () {
-                    TraktoEditor.init({
-                              apiSecret: '<SUA API SECRET>',
-                              productKey: '<SEU PRODUCT KEY>',
-                              userEmail: '<EMAIL DO USUARIO>',
-                              buttonClassName: 'trakto-button',
-                              defaultCallback: data => {},
-                              listTemplatesCallback: data => {},
-                              listFormatsCallback: data => {},
-                              listDocumentsCallback: data => {}
-                    )};
-               })();
-          };
+
+**Initialize the sdk and starting the editor via Button**
+```js 
+ <script>
+    window.onload = () => {
+        (function() {
+            TraktoEditor.init({
+                apiSecret: '<Your Api Key>',
+                productKey: '<Your Product Key>',
+                userEmail: 'user@email.com',
+                buttonClassName: 'trakto-button', 
+                customLoaderImageUrl: '<Loader image URL>',
+                customLoaderColor: '<Hexadecimal Loader color>',
+                customLoaderBgColor: '<Hexadecimal Background Loader Color>',
+                defaultCallback: data => {  },
+                listFormatsCallback: (data) => { },
+                listTemplatesCallback: (data) => { },
+                listDocumentsCallback: (data) => { }
+            });
+        })();
+    };
+</script>
+```
+
+**Initialize the sdk and starting the editor via JS**
+```JS
+ <script>
+    window.onload = () => {
+        (function() {
+            TraktoEditor.init({
+                apiSecret: '<Your Api Key>',
+                productKey: '<Your Product Key>',
+                userEmail: 'user@email.com',
+                customLoaderImageUrl: '<Loader image URL>',
+                customLoaderColor: '<Hexadecimal Loader color>',
+                customLoaderBgColor: '<Hexadecimal Background Loader Color>',
+                onAuthenticated: traktoEditor => {
+                    if (traktoEditor) {
+                        traktoEditor.openDocument('<Document ID>', data => console.log('closed editor'));
+                        traktoEditor.openFromTemplate('<Template ID>', data => console.log('closed editor'));
+                        traktoEditor.openFromFormat('<Format ID>', data => console.log('closed editor'));
+                    }
+                },
+                defaultCallback: data => {  },
+                listFormatsCallback: (data) => { },
+                listTemplatesCallback: (data) => { },
+                listDocumentsCallback: (data) => { }
+            });
+        })();
+    };
 </script>
 ```
 
 2. Make the button available to initialize the editor
+
+
+**2.1 Initializing via button**
 
 **Create from empty page:**
 ```
@@ -91,6 +127,15 @@ If you want to customize with your credentials:
         Your button title 
    </button>
 ```
+
+**2.2 Initializing via JS Function**
+
+|Function               |Description                                   |
+|-----------------------|----------------------------------------------|
+|**openDocument**       | Opens the document previously created by user|
+|**openFromTemplate**   | Creates the document from a template         |
+|**openFromFormat**     | Creates the document from a pages format     |
+
 
 <div id='links'/>
 
