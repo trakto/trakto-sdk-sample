@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Montserrat&display=swap"
+      rel="stylesheet"
+    />
+    <title>Trakto SDK Standalone Mode</title>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        background-color: #dddbdb;
+        padding: 0;
+        margin: 0;
+        font-family: 'Montserrat', sans-serif;
+        color: #666666;
+      }
+
+      h1,
+      h2,
+      h3,
+      h4 {
+        color: black;
+      }
+
+      .page {
+        width: 1024px;
+        background-color: #fff;
+        display: flex;
+        flex-direction: column;
+        box-shadow: 1px 2px 3px rgba(0, 0, 0, 0.3);
+      }
+
+      .page-header {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+      }
+
+      .page-topbar {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        width: 100%;
+        height: 72px;
+        padding: 0 20px;
+        background-color: #fff;
+      }
+
+      .page-topbar__menu {
+        width: 100%;
+        display: inline-flex;
+        list-style: none;
+      }
+
+      .page-topbar__menu li {
+        cursor: pointer;
+        height: 35px;
+        margin: 0 20px;
+        padding: 10px 0;
+      }
+
+      .page-topbar__menu li:hover {
+        border-bottom: 3px solid #ccc;
+      }
+
+      .page-topbar__menu li.active {
+        font-weight: bold;
+        color: black;
+        border-bottom: 3px solid #ccc;
+      }
+
+      .page-topbar__icons {
+        filter: grayscale(1);
+        margin-right: 10px;
+        height: 32px;
+        justify-self: flex-end;
+      }
+
+      .page-banner {
+        width: 100%;
+        background-size: cover;
+        height: 240px;
+        background-color: rgba(0, 0, 0, 0.3);
+        transition: 500ms all ease;
+      }
+
+      .page-banner:hover .page-header__button {
+        display: block !important;
+      }
+
+      .page-header__button {
+        background-color: #9988f2;
+        color: white;
+        border-radius: 20px;
+        padding: 10px 20px;
+        border: 1px #9988ff solid;
+        box-shadow: 1px 2px 5px rgba(0, 0, 0, 0.5);
+        letter-spacing: 0.5px;
+        font-size: 14px;
+        margin-right: 10px;
+      }
+
+      .page-content {
+        position: relative;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: flex-start;
+        flex-grow: 0;
+        width: 100%;
+        height: auto;
+        padding-top: 20px;
+      }
+
+      .page-content__aside {
+        width: 20%;
+        height: 60%;
+        padding: 0 30px 0 0;
+      }
+
+      .page-content__filter {
+        list-style: none;
+      }
+
+      .page-content__filter h3 {
+        margin-bottom: 30px;
+      }
+
+      .page-content__filter li {
+        cursor: pointer;
+        color: #666666;
+        margin: 10px 0;
+        font-size: 0.9em;
+      }
+
+      .page-content__filter li:hover {
+        background-color: #ccc;
+      }
+
+      .page-content__products {
+        width: 80%;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        padding: 20px;
+      }
+
+      .page-content__top {
+        width: 100%;
+        font-size: 11px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 20px;
+      }
+
+      .page-content__top img {
+        height: 28px;
+        margin-right: 20px;
+      }
+
+      .page-content__grid {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        padding: 0;
+      }
+
+      .page-content__grid::after {
+        content: '';
+        flex: auto;
+      }
+
+      .page-content__item {
+        margin: 15px 20px;
+        transition: 0.2s all ease-in-out;
+        cursor: pointer;
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        width: 120px;
+        height: 150px;
+        box-shadow: -1px 2px 10px rgba(0, 0, 0, 0.5);
+      }
+
+      .page-content__item:hover {
+        transform: scale(1.05);
+      }
+
+      .page-content__item figure {
+        margin: 0;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+      }
+
+      .page-content__item figure figcaption {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        padding: 10px 5px;
+        background-color: rgba(0, 0, 0, 0.5);
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 11px;
+        color: white;
+      }
+
+      .page-content__item figure figcaption span.price {
+        color: #666666;
+      }
+
+      .page-content__item figure img {
+        height: 100%;
+      }
+
+      .page-content__pagination button {
+        align-self: center;
+        margin-top: 30px;
+        background-color: #9988ff;
+        border-radius: 15px;
+        padding: 10px 40px;
+        list-style: none;
+        display: inline-flex;
+        color: white;
+        font-weight: bold;
+        font-size: 16px;
+        justify-content: space-between;
+        cursor: pointer;
+      }
+
+      .page-content__pagination button:first-child {
+        margin-right: 10px;
+      }
+
+      .page-content__pagination li {
+        font-size: 0.8em;
+        cursor: pointer;
+        line-height: 30px;
+        text-align: center;
+        vertical-align: middle;
+        margin-right: 10px;
+        border: 1px dashed #666666;
+        padding: 0 10px;
+      }
+
+      .flex-row-center {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .flex-center {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+
+      footer {
+        width: 100%;
+        margin-top: 20px;
+        font-size: 10px;
+        text-align: center;
+      }
+
+      footer a.link {
+        font-weight: bold;
+        text-decoration: none;
+        color: #666666;
+      }
+
+      .close-button {
+        background-color: #eff2f7;
+        color: #333333;
+        padding: 7px 15px;
+        box-shadow: 3px 7px 9px 1px rgba(0, 0, 0, 0.2);
+        font-size: 10px;
+        border-bottom-left-radius: 7px;
+        border-bottom-right-radius: 7px;
+      }
+
+      .close-button img {
+        width: 16px;
+      }
+    </style>
+  </head>
+
+  <body class="flex-center">
+    <div class="page">
+      <header class="page-header">
+        <div class="page-topbar">
+          <h1>Shop</h1>
+          <ul class="page-topbar__menu">
+            <li>Home</li>
+            <li class="active">Collection</li>
+            <li>Bags</li>
+            <li>Contact</li>
+          </ul>
+          <img class="page-topbar__icons" src="./assets/imgs/top_icons.png" />
+        </div>
+        <div class="page-banner flex-row-center">
+          <!-- data-formatid="" -->
+          <!-- data-documentid="" -->
+          <!-- data-templateid=" -->
+          <button
+            class="page-header__button trakto-button"
+            data-documentid="BY2tohNwozaB1vGXMNNa"
+          >
+            Criar banner
+          </button>
+          <!-- <button class="page-header__button trakto-button" data-documentid="<DocumentId>">
+          Editar documento
+        </button> -->
+        </div>
+      </header>
+
+      <section class="page-content">
+        <aside class="page-content__aside">
+          <ul class="page-content__filter">
+            <h3>Manage your files here!</h3>
+            <li id="listDocuments">Documents</li>
+            <li id="listFormats">Formats</li>
+            <li id="listThemes">Themes</li>
+            <li id="listTemplates">Templates</li>
+          </ul>
+        </aside>
+
+        <div class="page-content__products ">
+          <ul class="page-content__grid"></ul>
+          <div class="page-content__pagination flex-row-center">
+            <button class="page-content__pagination-previous">
+              Previous
+            </button>
+            <button class="page-content__pagination-next">
+              Next Page
+            </button>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <footer>
+      Powered by <a class="link" href="https://trakto.io">Trakto®</a>
+    </footer>
+
+    <script src="https://sdk-review.web.app/trakto-editor.min.js"></script>
+    <script>
+      window.onload = () => {
+        (function() {
+          ///////////////////Menu navigation bind///////////////////
+          document
+            .querySelector('#listDocuments')
+            .addEventListener('click', listDocuments);
+          document
+            .querySelector('#listTemplates')
+            .addEventListener('click', listTemplates);
+          document
+            .querySelector('#listFormats')
+            .addEventListener('click', listFormats);
+          document
+            .querySelector('#listThemes')
+            .addEventListener('click', listThemes);
+
+          ///////////////////Trakto SDK initialization///////////////////
+          TraktoEditor.init({
+            apiSecret: '<Your Api Secret>',
+            productKey: '<Your Product Key>',
+            userEmail: '<user@mail.com>',
+            buttonClassName: 'trakto-button',
+            customLoaderImageUrl: '<Your url logo>',
+            customLoaderColor: '#000b29',
+            customLoaderBgColor: '#777777',
+            allowNewPages: true,
+            standaloneMode: false,
+            defaultCallback: data => {
+              const banner = document.querySelector('.page-banner');
+              const buttons = document.querySelectorAll('.page-header__button');
+
+              if (data.pages && data.pages.length) {
+                banner.style.backgroundImage = `url(${data.pages[0].thumb})`;
+                buttons.forEach(button => (button.style.display = `none`));
+              }
+            },
+            defaultErrorHandler: error =>
+              console.log(`Default error handler: ${error}`),
+          });
+
+          function onSuccessLoadDocs(page, buttonAttr) {
+            console.log(`Trakto sdk - Data sent == `,page);
+            
+            let docsChildren = '';
+            const documentsContainer = document.querySelector(
+              '.page-content__grid'
+            );
+            const classTktBtn =
+              buttonAttr != 'data-themeid' ? 'trakto-button' : '';
+
+            page.data.forEach(doc => {
+              docsChildren += `<a class="page-content__item ${classTktBtn}" ${buttonAttr}="${
+                doc.id
+              }">
+                                        <figure>
+                                          <img src="${
+                                            doc.cover
+                                              ? doc.cover.low
+                                              : 'https://firebasestorage.googleapis.com/v0/b/trakto-dev.appspot.com/o/dev_assets%2Ftemplate-default.jpg?alt=media&token=501cea25-9938-491a-8d2f-b44c6acc7c8e'
+                                          }" />
+                                          <figcaption>
+                                            <span>${doc.title? doc.title : doc.titles.pt_BR} - ${formatDate(
+                doc.created_at
+              )}</span>
+                                          </figcaption>
+                                        </figure>
+                                       </a>`;
+            });
+
+            documentsContainer.innerHTML = docsChildren;
+          }
+
+          function formatDate(date) {
+            const dateJS = new Date(date);
+            const day = dateJS.getDate();
+            const monthIndex = dateJS.getMonth() + 1;
+            const year = dateJS.getFullYear();
+
+            return `${day}/${monthIndex}/${year}`;
+          }
+
+          function listDocuments() {
+            TraktoEditor.listDocuments(
+              { created_between_start: new Date(2019, 1, 1), created_between_end: new Date(2025, 1, 10), limit: 50},
+              onSuccessLoadDocs,
+              '.page-content__pagination-next',
+              '.page-content__pagination-previous'
+            );
+          }
+
+          function listTemplates() {
+            TraktoEditor.listTemplates(
+              { created_between_start: new Date(2010, 1, 1), created_between_end: new Date(2022, 1, 1)},
+              onSuccessLoadDocs,
+              '.page-content__pagination-next',
+              '.page-content__pagination-previous'
+            );
+          }
+
+          function listFormats() {
+            TraktoEditor.listFormats(
+              { created_between_start: new Date(2010, 1, 1), created_between_end: new Date(2025, 6, 31), limit: 80 },
+              page => onSuccessLoadDocs(page, 'data-formatid'),
+              '.page-content__pagination-next',
+              '.page-content__pagination-previous'
+            );
+          }
+
+          function listThemes() {
+            TraktoEditor.listThemes(
+              { created_between_start: new Date(2010, 1, 1), created_between_end: new Date(2025, 6, 31) },
+              page => {
+                onSuccessLoadDocs(page, 'data-themeid');
+
+                const themeBtns = document.querySelectorAll('[data-themeid]');
+
+                themeBtns.forEach(element => {
+                  element.addEventListener('click', () => {
+                    listTemplates({
+                      ...documentsFilter,
+                      theme_id: element.getAttribute('data-themeid'),
+                    });
+                  });
+                });
+              },
+              '.page-content__pagination-next',
+              '.page-content__pagination-previous'
+            );
+          }
+        })();
+      };
+    </script>
+  </body>
+</html>
