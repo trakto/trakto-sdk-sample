@@ -10,12 +10,12 @@ class SDKIntegration {
     }
 
     initComponents() {
-        window.onload = () => {
+        document.addEventListener('DOMContentLoaded', () => {
             this.formatsComponent = document.getElementById('textAreaFormats');
             this.designsComponent = document.getElementById('textAreaDesigns');
             this.templatesComponent = document.getElementById('textAreaTemplates');
             this.logsComponent = document.getElementById('textAreaLogs');
-        };
+        });
     }
     
     loadTraktoScript(accessToken) {
@@ -24,6 +24,7 @@ class SDKIntegration {
             fullScreen: false,
             customLoaderColor: '#9900f2',
             customLoaderBgColor: '#ff9999',
+            buttonClassName: 'trakto-button',
             allowNewPages: false,
             defaultCallback: this.editorResponseCallback.bind(this),
             onAuthenticated: this.authenticationCallback.bind(this),
@@ -38,7 +39,7 @@ class SDKIntegration {
     listFormatsCallback(data) {
         this.formatsComponent.value = JSON.stringify(data, null, 2);
         if (data.length) {
-            formatId = data[0].id;
+            this.formatId = data[0].id;
         }
     }
     
@@ -64,18 +65,19 @@ class SDKIntegration {
     editorResponseCallback(response) {
         if (!response) {
             alert('Editor não retornou resposta');
-            return;
         }
     }
     
     authenticationCallback(sdkInstance) {
         if (sdkInstance) {
-            const actions = new SDKActions(sdkInstance);
+            const actions = new SDKActions(
+                sdkInstance,
+                this.formatId,
+                this.designId,
+                this.templateId,);
             actions.start();
-            debugger;
             this.notificationComponent.notifySuccess('✅ SDK pronto para ser utilizado! 🚀');
         } else {
-            debugger;
             this.notificationComponent.notifyError('😢 Não foi possível importar o SDK');
         }
     }

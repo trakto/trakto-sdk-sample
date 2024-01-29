@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <script src="https://sdk-v2.web.app/trakto-editor.min.js"></script>
+    <script src="../../trakto-editor.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
     
@@ -55,19 +55,22 @@
         <label class="tab-title"> 🤓 Respostas recebidas pelo Trakto SDK</label>
         <ul class="nav nav-tabs" id="myTab" role="tablist">
             <li class="nav-item">
-                <a class="nav-link active" id="designs-tab" data-toggle="tab" href="#designs" role="tab" aria-controls="designs" aria-selected="true">⭐️ Designs do usuário</a>
+                <a class="nav-link active" id="designs-tab" data-toggle="tab" href="#designs" role="tab" aria-controls="designs" aria-selected="true">⭐️ Designs</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" id="templates-tab" data-toggle="tab" href="#templates" role="tab" aria-controls="templates" aria-selected="false">🧠 Templates</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" id="pageFormats-tab" data-toggle="tab" href="#pageFormats" role="tab" aria-controls="pageFormats" aria-selected="false">🤘 Formatos de página</a>
+                <a class="nav-link" id="pageFormats-tab" data-toggle="tab" href="#pageFormats" role="tab" aria-controls="pageFormats" aria-selected="false">🤘 Formatos</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" id="pageFormats-tab" data-toggle="tab" href="#editorResponse" role="tab" aria-controls="editorResponse" aria-selected="false">🐳 Respostas do editor</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" id="pageFormats-tab" data-toggle="tab" href="#errorResponse" role="tab" aria-controls="errorResponse" aria-selected="false">🚨 Erros ocorridos</a>
+                <a class="nav-link" id="pageFormats-tab" data-toggle="tab" href="#errorResponse" role="tab" aria-controls="errorResponse" aria-selected="false">🚨 Erros</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" id="createFromButtons-tab" data-toggle="tab" href="#createFromButtons" role="tab" aria-controls="createFromButtons" aria-selected="false">🎨 Criar com Trakto Button</a>
             </li>
         </ul>
         <div class="tab-content" id="myTabContent">
@@ -78,13 +81,30 @@
                 <textarea id="textAreaTemplates"></textarea>
             </div>
             <div class="tab-pane fade" id="pageFormats" role="tabpanel" aria-labelledby="pageFormats-tab">
-                <textarea id="textAreaPageFormats"></textarea>
+                <textarea id="textAreaFormats"></textarea>
             </div>
             <div class="tab-pane fade" id="editorResponse" role="tabpanel" aria-labelledby="editorResponse-tab">
                 <textarea id="textAreaEditorResponse"></textarea>
             </div>
             <div class="tab-pane fade" id="errorResponse" role="tabpanel" aria-labelledby="errorResponse-tab">
                 <textarea id="textAreaLogs"></textarea>
+            </div>
+            <div class="tab-pane fade" id="createFromButtons" role="tabpanel" aria-labelledby="createFromButtons-tab">
+                <p class="form-label">
+                    Para saber mais sobre o Trakto Button (botão de abertura do editor usando HTML e não a instância do SDK da Trakto), acesse o link:
+                </p>
+                <a href="https://traktoapi.docs.apiary.io/#/introduction/8-creating-or-editing-a-document-via-trakto-html-button">🔗 Documentação Trakto Button</a>
+                <div class="row">
+                    <div class="col-md-4">
+                        <button id="openDesignButton" class="trakto-button btn btn-primary btn-lg btn-block">Usar design mais recente</button>
+                    </div>
+                    <div class="col-md-4">
+                        <button id="openTemplateButton" class="trakto-button btn btn-primary btn-lg btn-block">Usar template mais recente</button>
+                    </div>
+                    <div class="col-md-4">
+                        <button id="openBlankButton" class="trakto-button btn btn-primary btn-lg btn-block">Usar formato mais recente</button>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -122,7 +142,7 @@
                     </form>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal" id="closeAuth">Fechar</button>
                     <button type="button" class="btn btn-primary" id="submitAuth">Realizar Login</button>
                 </div>
             </div>
